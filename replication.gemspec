@@ -6,6 +6,7 @@ require 'replication/version'
 Gem::Specification.new do |spec|
   spec.name          = "replication"
   spec.version       = Replication::VERSION
+  spec.platform      = Gem::Platform::RUBY
   spec.authors       = ["Rodrigo DeAlmeida"]
   spec.email         = ["rodrigoddalmeida@gmail.com"]
   spec.summary       = %q{Data replication as templates for Ruby ORMs}
