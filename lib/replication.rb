@@ -25,3 +25,5 @@ module Replication
 
   class UnwoundError < StandardError; end;
 end
+
+require 'replication/engine' if defined?(Rails)
