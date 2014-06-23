@@ -10,7 +10,7 @@ module Replication
 
     def with(modules)
       modules.each do |m|
-        model_class.send :extend, Replication::Modules.const_get(m.to_s.classify)
+        model_class.send :include, Replication::Modules.const_get(m.to_s.classify)
       end
     end
 
