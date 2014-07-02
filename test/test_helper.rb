@@ -8,4 +8,4 @@ require "rails/test_help"
 require "orm/#{REPLICATION_ORM}"
 
 require "minitest/reporters"
-Minitest::Reporters.use!
+Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(color: false)]
