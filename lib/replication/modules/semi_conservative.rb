@@ -1,3 +1,6 @@
+require 'active_support/core_ext/hash/except'
+require 'active_support/core_ext/hash/slice'
+
 module Replication
   module Modules
     module SemiConservative
@@ -19,7 +22,9 @@ module Replication
       end
 
       def strand_attributes
-        _strand_attributes.except(*replication_config.except)
+        @strand_attributes = _strand_attributes
+        @strand_attributes = @strand_attributes.slice(*replication_config.only) unless replication_config.only.empty?
+        @strand_attributes = @strand_attributes.except(*replication_config.except) unless replication_config.except.empty?
       end
     end
   end

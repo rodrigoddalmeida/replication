@@ -50,6 +50,11 @@ class Model
 end
 ```
 
+You can whitelist an array of attributes. They'll be replicated in the new strand.
+```ruby
+can_replicate only: [:some_column, :other_column]
+```
+
 You can blacklist an array of attributes. They'll not be replicated in the new strand.
 ```ruby
 can_replicate except: [:id, :name]

@@ -2,7 +2,7 @@ module Replication
 
   class Config
 
-    attr_accessor :model_class, :pairs_method, :strand_class, :except
+    attr_accessor :model_class, :pairs_method, :strand_class, :except, :only
 
     def initialize(model_class)
       @model_class = model_class

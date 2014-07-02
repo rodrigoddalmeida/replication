@@ -16,8 +16,11 @@ module Replication
   end
 
   def self.defaults
-    defaults = {}
-    defaults.merge({
+    defaults = {
+      only: [], 
+      except: []
+    }
+    defaults.merge!({
       strand_class: ::Replication::ActiveRecord::Strand,
       except: [:id, :created_at, :updated_at]
     }) if defined?(ActiveRecord)
