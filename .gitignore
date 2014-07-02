@@ -22,3 +22,6 @@ tmp
 mkmf.log
 
 *.log
+
+.ruby-version
+.ruby-gemset
