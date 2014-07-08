@@ -2,13 +2,6 @@ require "test_helper"
 
 class Replication::Modules::SemiConservativeTest < ActiveSupport::TestCase
 
-  def setup
-    Organism.extend Replication::Process
-  end
-
-  def organism_object
-    Organism.new(name: 'Bacteria', number_of_legs: 1, birth_date: Time.now)
-  end
 
   test "unwound with default options" do
     Organism.can_replicate

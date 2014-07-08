@@ -101,6 +101,12 @@ needs the 'id' and 'type' references for the association.
 
 In some cases you don't want/won't need the strands to be associated, so, be free.
 
+There's also a Association module, that is experimental and should be used with care. It uses the same parameters as the ```accepts_nested_attributes_for```.
+
+```ruby
+Model.can_replicate with: { associations: [:children, reject_if: :all_blank] }
+```
+
 ### Rails
 
 Migrations are be provided by:

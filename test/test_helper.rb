@@ -9,3 +9,10 @@ require "orm/#{REPLICATION_ORM}"
 
 require "minitest/reporters"
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(color: false)]
+
+# Basic Setup
+Organism.extend Replication::Process
+
+def organism_object
+  Organism.new(name: 'Bacteria', number_of_legs: 1, birth_date: Time.now)
+end

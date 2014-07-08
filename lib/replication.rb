@@ -13,6 +13,8 @@ module Replication
   module Modules
     autoload :SemiConservative, 'replication/modules/semi_conservative'
     autoload :Proofreading, 'replication/modules/proofreading'
+
+    autoload :Association, 'replication/modules/association'
   end
 
   def self.defaults

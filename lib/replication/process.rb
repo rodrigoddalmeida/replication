@@ -3,7 +3,6 @@ module Replication
 
     def self.extended(model_class)
       model_class.class_eval do
-        @@replication_config = Class.new(Config).new(self)
         include Model
       end
     end
@@ -14,9 +13,10 @@ module Replication
     end
 
     def can_replicate(pairs_method = :attributes, **options)
+      @@replication_config = Class.new(Config).new(self)
       default_options = Replication.defaults
       modules = [:semi_conservative] # required module
-      modules.concat(Array(options.delete(:with)))
+      modules.concat([].push(options.delete(:with)).flatten).compact!
 
       @@replication_config.pairs_method = pairs_method
       @@replication_config.set default_options.merge(options)
