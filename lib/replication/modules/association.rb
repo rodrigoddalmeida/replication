@@ -22,7 +22,7 @@ module Replication
             attributes_from_association.delete('id')
             attributes_from_association.delete(association_reflection.foreign_key)
             @strand_attributes.merge!({
-              "#{a}_attributes".to_sym => association_model.select(*attributes_from_association).to_a.map(&:serializable_hash)
+              "#{a}_attributes".to_sym => self.send(association_reflection.name).select(*attributes_from_association).to_a.map(&:serializable_hash)
             })
           end 
         end

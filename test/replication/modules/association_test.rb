@@ -10,7 +10,11 @@ class Replication::Modules::AssociationTest < ActiveSupport::TestCase
     organism.save
     strand = organism.unwound(name: 'Monkey with a wrench')
 
+    Tooling.create(tool: Tool.first) # create unassociated tooling
+
     assert_includes strand.pairs, :toolings_attributes
+    assert_equal 1, strand.pairs[:toolings_attributes].length
+    assert_equal 2, Tooling.count
   end
 end
 
