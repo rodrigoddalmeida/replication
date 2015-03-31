@@ -4,8 +4,6 @@ module Replication
     def can_replicate(pairs_method = :attributes, **options)
       reset_config if self.respond_to?(:unwound)
 
-      puts replication_config.inspect
-
       default_options = Replication.defaults
       modules = [:semi_conservative] # required module
       modules.concat([].push(options.delete(:with)).flatten).compact!
