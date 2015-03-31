@@ -1,5 +1,7 @@
 # Replication
 
+[![Code Climate](https://codeclimate.com/github/rodrigoddalmeida/replication.png)](https://codeclimate.com/github/rodrigoddalmeida/replication)
+
 Data replication as templates for Ruby ORMs.
 
 > ![DNA]
