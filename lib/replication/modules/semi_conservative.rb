@@ -9,7 +9,8 @@ module Replication
         strand_class.new({
           name: options[:name],
           pairs: strand_attributes,
-          origin: self
+          origin_id: self.id,
+          origin_type: self.class.to_s
         })
       end
 
@@ -17,7 +18,8 @@ module Replication
         strand_class.to_adapter.create!({
           name: options[:name],
           pairs: strand_attributes,
-          origin: self
+          origin_id: self.id,
+          origin_type: self.class.to_s
         })
       end
 

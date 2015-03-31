@@ -5,7 +5,7 @@ class OrganismMigration < ActiveRecord::Migration
       t.integer :number_of_legs
       t.datetime :birth_date
 
-      t.timestamps
+      t.timestamps null: true
     end
   end
 

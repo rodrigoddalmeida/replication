@@ -3,7 +3,7 @@ require "test_helper"
 class Replication::ProcessTest < ActiveSupport::TestCase
 
   def setup
-    Organism.extend Replication::Process
+    Organism.extend Replication
   end
 
   test "extending provide can_replicate method" do
@@ -47,5 +47,13 @@ class Replication::ProcessTest < ActiveSupport::TestCase
     strand = original.replicate(name: 'Original Bacteria')
 
     assert_instance_of Organism, Organism.new_from_strand(name: 'Original Bacteria')
+  end
+
+  test "STI support" do
+    Animal.can_replicate
+    original = Animal.create(name: 'Bat', number_of_legs: 2, birth_date: Time.now)
+    strand = original.replicate(name: 'Original Bat')
+
+    assert_equal "Animal", strand.origin_type
   end
 end

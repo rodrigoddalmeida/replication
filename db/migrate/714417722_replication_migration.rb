@@ -5,7 +5,7 @@ class ReplicationMigration < ActiveRecord::Migration
       t.text :pairs
       t.references :origin, polymorphic: true, index: true
 
-      t.timestamps
+      t.timestamps null: true
     end
   end
 

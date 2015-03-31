@@ -5,7 +5,7 @@ module Replication
     class Strand < ::ActiveRecord::Base
       extend Replication::StrandMethods
       serialize :pairs
-      belongs_to :origin, polymorphic: true
+      belongs_to :origin
 
       validates :name, uniqueness: true, presence: true
     end

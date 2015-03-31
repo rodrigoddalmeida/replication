@@ -24,7 +24,7 @@ module Replication
             @strand_attributes.merge!({
               "#{a}_attributes".to_sym => self.send(association_reflection.name).select(attributes_from_association).to_a.map(&:serializable_hash)
             })
-          end 
+          end
         end
 
         @strand_attributes

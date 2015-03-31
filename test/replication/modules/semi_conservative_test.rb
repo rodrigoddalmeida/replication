@@ -2,7 +2,6 @@ require "test_helper"
 
 class Replication::Modules::SemiConservativeTest < ActiveSupport::TestCase
 
-
   test "unwound with default options" do
     Organism.can_replicate
     organism = organism_object
